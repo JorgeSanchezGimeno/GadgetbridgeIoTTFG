@@ -1,0 +1,22 @@
+version: "3"
+services:
+  hapi-fhir-jpaserver-start:
+    build: .
+    container_name: hapi-fhir-jpaserver-start
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    depends_on:
+    - emqx
+    environment:
+      - EMQX_BROKER_URL=tcp://emqx:1883
+  emqx:
+    image: emqx/emqx:5.6.1
+    container_name: emqx
+    restart: always
+    ports:
+      - "1883:1883"
+      - "18083:18083"
+      - "8083:8083"
+      - "8883:8883"
+
