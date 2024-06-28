@@ -5,7 +5,6 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import javax.net.ssl.TrustManagerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -25,25 +24,18 @@ import com.google.gson.*;
 
 import java.text.ParseException;
 import java.util.logging.Logger;
-import java.io.FileInputStream;
 import java.lang.reflect.Type;
-import java.security.KeyStore;
 import java.util.TimeZone;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.KeyManagerFactory;
-import java.io.FileInputStream;
-import java.security.KeyStore;
 
 
 
 @Component
 public class MqttConfig {
 
-    private static final String MQTT_BROKER_URL = "ssl://emqx:8883";
+    private static final String MQTT_BROKER_URL = "tcp://emqx:1883";
     private static final String MQTT_CLIENT_ID = "hapi-fhir-server-client";
     private static final String MQTT_TOPIC_PATIENT_QUERY = "fhir/patient/query";
     private static final String MQTT_TOPIC_PATIENT_RESPONSE = "fhir/patient/response";

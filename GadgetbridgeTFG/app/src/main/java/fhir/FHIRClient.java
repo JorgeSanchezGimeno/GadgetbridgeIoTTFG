@@ -38,7 +38,7 @@ import org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory;
 public class FHIRClient {
 
     private static final String TAG = "FHIRClient";
-    private static final String MQTT_BROKER_URL = "tcp://192.168.1.60:1883";
+    private static final String MQTT_BROKER_URL = "tcp://YOUR_IP:1883";
     private static final String MQTT_TOPIC_PATIENT_QUERY = "fhir/patient/query";
     private static final String MQTT_TOPIC_PATIENT_RESPONSE = "fhir/patient/response";
     private static final String MQTT_TOPIC_PATIENT = "fhir/patient";
